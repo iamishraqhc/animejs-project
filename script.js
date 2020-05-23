@@ -24,46 +24,28 @@ function allowDrop(evt){
     evt.preventDefault();
 }
 
-function dropGroup5(evt){
+function drop(evt){
     evt.preventDefault();
     var data = evt.dataTransfer.getData("image");
     var image = document.getElementById(data);
     evt.target.appendChild(image);
-    count = count + 1;
-    if (count == 4){
-        document.getElementById('background').innerHTML="<img src='images/final.png'>";
-    }
-}
+    var mapImage = document.querySelector('#mapImg');
+        anime({
+            targets : mapImage,
+            scale: [1.5, 1],
+            duration: 1500,
+        });
 
-function dropGroup3(evt){
-    evt.preventDefault();
-    var data = evt.dataTransfer.getData("image");
-    var image = document.getElementById(data);
-    evt.target.appendChild(image);
+    
     count = count + 1;
     if (count == 4){
         document.getElementById('background').innerHTML="<img src='images/final.png'>";
-    }
-}
-
-function dropRectangle6copy6(evt){
-    evt.preventDefault();
-    var data = evt.dataTransfer.getData("image");
-    var image = document.getElementById(data);
-    evt.target.appendChild(image);
-    count = count + 1;
-    if (count == 4){
-        document.getElementById('background').innerHTML="<img src='images/final.png'>";
-    }
-}
-
-function dropLayer1(evt){
-    evt.preventDefault();
-    var data = evt.dataTransfer.getData("image");
-    var image = document.getElementById(data);
-    evt.target.appendChild(image);
-    count = count + 1;
-    if (count == 4){
-        document.getElementById('background').innerHTML="<img src='images/final.png'>";
+        var newImage = document.querySelector('#background');
+        anime({
+            targets: newImage,
+            scale: [1.5, 1],
+            rotate: 360,
+            duration: 5000
+        })
     }
 }
