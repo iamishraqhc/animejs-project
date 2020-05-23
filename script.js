@@ -18,9 +18,8 @@ function drop(evt){
         anime({
             targets : mapImage,
             scale: [1.5, 1],
-            duration: 1500,
+            duration: 2000,
         });
-
     
     count = count + 1;
     if (count == 4){
