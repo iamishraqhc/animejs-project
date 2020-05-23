@@ -1,21 +1,6 @@
 var count = 0;
 
-function dragGroup5(evt){
-    evt.dataTransfer.setData("image", evt.target.id);
-    evt.target.style.opacity = "0";
-}
-
-function dragGroup3(evt){
-    evt.dataTransfer.setData("image", evt.target.id);
-    evt.target.style.opacity = "0";
-}
-
-function dragRectangle6copy6(evt){
-    evt.dataTransfer.setData("image", evt.target.id);
-    evt.target.style.opacity = "0";
-}
-
-function dragLayer1(evt){
+function drag(evt){
     evt.dataTransfer.setData("image", evt.target.id);
     evt.target.style.opacity = "0";
 }
@@ -27,7 +12,9 @@ function allowDrop(evt){
 function drop(evt){
     evt.preventDefault();
     var data = evt.dataTransfer.getData("image");
+    console.log('data is =>', data);
     var image = document.getElementById(data);
+    console.log('image is =>', image);
     evt.target.appendChild(image);
     var mapImage = document.querySelector('#mapImg');
         anime({
